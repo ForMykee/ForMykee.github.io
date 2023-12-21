@@ -1,0 +1,205 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="icon" href="img/calculator-fill.svg" type="image/x-icon">
+    <script src="index.js"defer ></script>
+    <script src="js/bootstrap.bundle.js"defer ></script>
+
+    <title>Calculadora de Ecuaciones</title>
+</head>
+<body style="background-color: #efefef">
+    <div class="container">
+        <header>
+            <div class="bg-dark collapse" id="navbarHeader">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-8 py-4 text-white">
+                            <h4 >Acerca de</h4>
+                            <p >La presente calculadora fue eleborada como parte de uno de los trabajos especiales para la consideracion de punto extra para la materia de Ecuaciones Diferenciales impartida por <b>Silva Martínez Jorge Javier</b>.
+                                <br>
+                                <br>
+                                <b>Desarrollador:</b> <br>
+                                <b>Nombre:</b> Miguel<br>
+                                <b>Apellido:</b> Gómez López<br>
+                                <b>Matricula:</b> 2023630011<br>
+                                <b>Correo:</b> golomian16@hotmail.com
+                            </p>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+    
+            <div class="navbar navbar-dark bg-dark">
+                <div class="container">
+                    <a href="#" class="navbar-brand d-flex align-items-center">
+                       <img src="img/calculadora.png" alt="">
+                        <strong>Trabajo Especial</strong>
+                    </a>
+                    <button 
+                        class="navbar-toggler collapsed"
+                        type="button" 
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarHeader"
+                        aria-controls="navbarHeader"
+                        aria-expanded="false"
+                        aria-label="Alternar Navegacion"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <div class="row mt-5 justify-content-center">
+            <div class="col-4">
+                <div class="form-floating">
+                    <input type="text" id="num1" class="form-control" placeholder="Número 1">
+                    <label for="num1">x^2</label>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-floating">
+                    <input type="text" id="num2" class="form-control" placeholder="Número 2">
+                    <label for="num2">x</label>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-floating">
+                    <input type="text" id="num3" class="form-control" placeholder="Número 3">
+                    <label for="num3"></label>
+                </div>
+            </div>
+            <div class=" col-11 alert alert-dark bg-dark alert-dismissible alert-flush mt-3 fade show role-alert text-white">
+                <h3>Calculadora de Ecuaciones Diferenciales de Segundo Orden</h3>
+                <hr>
+                La <b>calculadora</b> dara los resultados:<br>
+                Ecuación caracteristica <br>
+                Raíces <br> 
+                Soluciones <br>
+                Solución General <br>
+
+                <button 
+             type="button"
+             class="btn-close" 
+             data-bs-dismiss="alert"
+             aria-label="Cerrar"
+             ></button>
+             </div>
+            <div class="row mt-3">
+                <div class="col-auto mb-5 d-grid gap-2 col-12 mx-auto">
+                    <button class="btn  btn-outline-dark btn-lg fixed-bottom-left" type="button" onclick="resolverEcuacion()">Resolver</button>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <h3>Resultado:</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="ecuacion">Ecuación General:</label>
+                        <input type="text" id="ecuacion" class="form-control" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="raices">Raíces:</label>
+                        <input type="text" id="raices" class="form-control" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="solucion1">Solución 1:</label>
+                        <input type="text" id="solucion1" class="form-control" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="solucion2">Solución 2:</label>
+                        <input type="text" id="solucion2" class="form-control" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="solucionGeneral">Solución General:</label>
+                        <input type="text" id="solucionGeneral" class="form-control" disabled>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row mt-5 mb-5">
+            <div class="col mt-2 mb-5">
+                <div class="form-group">
+                    <label for="metodo">Forma de solucion:</label>
+                    <textarea id="metodo" class="form-control" rows="5" disabled></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-5 mb-5">
+			<div class="col mb-5">
+				<div class="carousel slide carousel-fade" id="mi-carousel" data-bs-ride="carousel">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img class="img-fluid" src="img/two.png" alt="">
+						</div>
+						<div class="carousel-item" data-bs-interval="5000">
+							
+							<img class="img-fluid" src="img/one.png" alt="">
+						</div>
+						<div class="carousel-item">
+							<img class="img-fluid" src="img/three.png" alt="">
+						</div>
+					</div>
+
+
+
+
+
+
+					<!-- Controles -->
+					<button 
+						class="carousel-control-prev"
+						type="button"
+						data-bs-target="#mi-carousel"
+						data-bs-slide="prev"
+					>
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Anterior</span>
+					</button>
+
+					<button 
+						class="carousel-control-next"
+						type="button"
+						data-bs-target="#mi-carousel"
+						data-bs-slide="next"
+					>
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Siguiente</span>
+					</button>
+
+					<!-- Indicadores -->
+					<div class="carousel-indicators">
+						<button 
+							type="button"
+							class="active"
+							data-bs-target="#mi-carousel"
+							data-bs-slide-to="0"
+							aria-label="Slide 1"
+						></button>
+						<button 
+							type="button"
+							class=""
+							data-bs-target="#mi-carousel"
+							data-bs-slide-to="1"
+							aria-label="Slide 2"
+						></button>
+						<button 
+							type="button"
+							class=""
+							data-bs-target="#mi-carousel"
+							data-bs-slide-to="2"
+							aria-label="Slide 3"
+						></button>
+					</div>
+				</div>
+			</div>
+		</div>
+      
+    
+</body>
+</html>
