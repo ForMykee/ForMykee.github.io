@@ -15,8 +15,9 @@ function resolverEcuacion() {
     } else {
         let realPart = -b / (2 * a);
         let imaginaryPart = Math.sqrt(-discriminant) / (2 * a);
-        root1 = `${realPart} + ${imaginaryPart}i`;
-        root2 = `${realPart} - ${imaginaryPart}i`;
+        alpha= `${realPart} `;
+        beta= `${imaginaryPart}`;
+        
     }
 
     // Mostrar la ecuación característica, las raíces y las soluciones generales
@@ -26,15 +27,15 @@ function resolverEcuacion() {
     if (discriminant > 0) {
         document.getElementById('solucion1').value = `Solución 1: m = e^(${root1}x)`;
         document.getElementById('solucion2').value = `Solución 2: n = e^(${root2}x)`;
-        document.getElementById('solucionGeneral').value = `Solución General: y = c1 * e^(${root1}x) + c2 * e^(${root2}x)`;
+        document.getElementById('solucionGeneral').value = `Solución General: y = c1 * e^(${root1}) + c2 * e^(${root2})`;
     } else if (discriminant === 0) {
         document.getElementById('solucion1').value = `Solución 1: m = e^(${root1}x)`;
         document.getElementById('solucion2').value = `Solución 2: n = x * e^(${root2}x)`;
-        document.getElementById('solucionGeneral').value = `Solución General: y = c1 * e^(${root1}x) + c2 * x * e^(${root2}x)`;
+        document.getElementById('solucionGeneral').value = `Solución General: y = c1 * e^(${root1}) + c2 * x * e^(${root2})`;
     } else {
-        document.getElementById('solucion1').value = `Solución 1: m = e^(${root1}x) * cos(${root2}x)`;
-        document.getElementById('solucion2').value = `Solución 2: n = e^(${root1}x) * sin(${root2}x)`;
-        document.getElementById('solucionGeneral').value = `Solución General: y = c1 * e^(${root1}x) * cos(${root2}x) + c2 * e^(${root1}x) * sin(${root2}x)`;
+        document.getElementById('solucion1').value = `Solución 1: m = e^(${alpha}x) * cos(${beta}x)`;
+        document.getElementById('solucion2').value = `Solución 2: n = e^(${alpha}x) * sin(${beta}x)`;
+        document.getElementById('solucionGeneral').value = `Solución General: y = c1 * e^(${alpha}) * cos(${beta}x) + c2 * e^(${alpha}x) * sin(${beta})`;
     }
     function obtenerProcedimiento(a, b, c) {
         let procedimiento = `Procedimiento para resolver la ecuación diferencial de segundo orden (${a}x^2 + ${b}x + ${c} = 0):\n`;
@@ -73,6 +74,8 @@ function resolverEcuacion() {
 
     // Resto de tu código para resolver la ecuación y mostrar los resultados...
 }
+
+
 
 
 
